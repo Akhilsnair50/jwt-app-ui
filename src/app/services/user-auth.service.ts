@@ -40,4 +40,13 @@ export class UserAuthService {
   public isLoggedIn(){
     return this.getRoles() && this.getToken();
   }
+
+  public setUserName(userName:string){
+    localStorage.setItem('userName',userName);
+  }
+
+  public getUserName(){
+    const userName = localStorage.getItem('userName');
+    return userName;
+  }
 }
